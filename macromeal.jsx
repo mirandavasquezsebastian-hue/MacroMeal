@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 
 /* ============================================================
-   MacroMeal — precision nutrition, delivered
+   MacroMeal — nutrición de precisión, delivery en Lima
    Aesthetic: graphite + lime, monospace data, lab-instrument feel
    ============================================================ */
 
@@ -164,15 +164,15 @@ function Onboarding() {
   const [carbs, setCarbs] = useState(240);
   const [fats, setFats] = useState(75);
 
-  const steps = ["Body", "Goal", "Calories", "Macros"];
+  const steps = ["Cuerpo", "Meta", "Calorías", "Macros"];
   const goals = [
-    { id: "cut", label: "Cut", desc: "Lose fat, keep muscle", icon: Flame },
-    { id: "maintain", label: "Maintain", desc: "Hold current physique", icon: Activity },
-    { id: "bulk", label: "Bulk", desc: "Build lean mass", icon: Dumbbell },
+    { id: "cut", label: "Bajar grasa", desc: "Perder grasa, mantener músculo", icon: Flame },
+    { id: "maintain", label: "Mantener", desc: "Conservar físico actual", icon: Activity },
+    { id: "bulk", label: "Ganar músculo", desc: "Construir masa magra", icon: Dumbbell },
   ];
 
   return (
-    <Phone title="01 — onboarding">
+    <Phone title="01 — registro">
       <div className="px-6 pt-2 pb-4">
         {/* progress stepper */}
         <div className="flex items-center gap-1.5 mb-8">
@@ -189,22 +189,22 @@ function Onboarding() {
         {step === 0 && (
           <div className="space-y-7 animate-in fade-in duration-500">
             <div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-lime-300/70 mb-2">step.01</div>
-              <h2 className="text-3xl font-medium text-white leading-tight" style={{fontFamily:"Geist"}}>Your <span style={{fontFamily:"Instrument Serif",fontStyle:"italic"}}>baseline</span>.</h2>
-              <p className="text-sm text-white/50 mt-2">Two measurements. We&apos;ll do the rest.</p>
+              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-lime-300/70 mb-2">paso.01</div>
+              <h2 className="text-3xl font-medium text-white leading-tight" style={{fontFamily:"Geist"}}>Tu <span style={{fontFamily:"Instrument Serif",fontStyle:"italic"}}>punto de partida</span>.</h2>
+              <p className="text-sm text-white/50 mt-2">Dos medidas. Nosotros calculamos lo demás.</p>
             </div>
 
             <div className="space-y-6">
               <div>
                 <div className="flex justify-between items-baseline mb-3">
-                  <span className="text-xs uppercase tracking-wider text-white/50">Weight</span>
+                  <span className="text-xs uppercase tracking-wider text-white/50">Peso</span>
                   <Mono className="text-2xl text-white tabular-nums">{weight}<span className="text-white/30 text-sm ml-1">kg</span></Mono>
                 </div>
                 <input type="range" min="40" max="140" value={weight} onChange={e=>setWeight(+e.target.value)} className="mm-slider" />
               </div>
               <div>
                 <div className="flex justify-between items-baseline mb-3">
-                  <span className="text-xs uppercase tracking-wider text-white/50">Height</span>
+                  <span className="text-xs uppercase tracking-wider text-white/50">Estatura</span>
                   <Mono className="text-2xl text-white tabular-nums">{height}<span className="text-white/30 text-sm ml-1">cm</span></Mono>
                 </div>
                 <input type="range" min="140" max="210" value={height} onChange={e=>setHeight(+e.target.value)} className="mm-slider" />
@@ -214,10 +214,10 @@ function Onboarding() {
             {/* readout */}
             <div className="rounded-2xl border border-white/5 bg-white/[0.02] p-4 flex items-center justify-between">
               <div>
-                <div className="font-mono text-[10px] uppercase tracking-wider text-white/40">BMI calculated</div>
+                <div className="font-mono text-[10px] uppercase tracking-wider text-white/40">IMC calculado</div>
                 <Mono className="text-xl text-white mt-0.5">{(weight / Math.pow(height/100, 2)).toFixed(1)}</Mono>
               </div>
-              <Tag tone="lime">athletic range</Tag>
+              <Tag tone="lime">rango atlético</Tag>
             </div>
           </div>
         )}
@@ -225,8 +225,8 @@ function Onboarding() {
         {step === 1 && (
           <div className="space-y-5 animate-in fade-in duration-500">
             <div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-lime-300/70 mb-2">step.02</div>
-              <h2 className="text-3xl font-medium text-white leading-tight" style={{fontFamily:"Geist"}}>What are you <span style={{fontFamily:"Instrument Serif",fontStyle:"italic"}}>chasing</span>?</h2>
+              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-lime-300/70 mb-2">paso.02</div>
+              <h2 className="text-3xl font-medium text-white leading-tight" style={{fontFamily:"Geist"}}>¿Qué estás <span style={{fontFamily:"Instrument Serif",fontStyle:"italic"}}>buscando</span>?</h2>
             </div>
             <div className="space-y-3">
               {goals.map(g => {
@@ -253,9 +253,9 @@ function Onboarding() {
         {step === 2 && (
           <div className="space-y-7 animate-in fade-in duration-500">
             <div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-lime-300/70 mb-2">step.03</div>
-              <h2 className="text-3xl font-medium text-white leading-tight" style={{fontFamily:"Geist"}}>Daily <span style={{fontFamily:"Instrument Serif",fontStyle:"italic"}}>energy</span>.</h2>
-              <p className="text-sm text-white/50 mt-2">Recommended for your goal: <Mono className="text-lime-300">2,380 kcal</Mono></p>
+              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-lime-300/70 mb-2">paso.03</div>
+              <h2 className="text-3xl font-medium text-white leading-tight" style={{fontFamily:"Geist"}}>Energía <span style={{fontFamily:"Instrument Serif",fontStyle:"italic"}}>diaria</span>.</h2>
+              <p className="text-sm text-white/50 mt-2">Recomendado para tu meta: <Mono className="text-lime-300">2,380 kcal</Mono></p>
             </div>
             <div className="flex items-baseline justify-center gap-2 py-6">
               <Mono className="text-7xl text-white tabular-nums font-medium">{cals}</Mono>
@@ -273,15 +273,15 @@ function Onboarding() {
         {step === 3 && (
           <div className="space-y-5 animate-in fade-in duration-500">
             <div>
-              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-lime-300/70 mb-2">step.04</div>
-              <h2 className="text-3xl font-medium text-white leading-tight" style={{fontFamily:"Geist"}}>Split your <span style={{fontFamily:"Instrument Serif",fontStyle:"italic"}}>macros</span>.</h2>
+              <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-lime-300/70 mb-2">paso.04</div>
+              <h2 className="text-3xl font-medium text-white leading-tight" style={{fontFamily:"Geist"}}>Divide tus <span style={{fontFamily:"Instrument Serif",fontStyle:"italic"}}>macros</span>.</h2>
             </div>
 
             <div className="space-y-5">
               {[
-                {label:"Protein", value:protein, set:setProtein, max:300, color:TOKENS.protein, kcal:protein*4},
-                {label:"Carbs", value:carbs, set:setCarbs, max:500, color:TOKENS.carbs, kcal:carbs*4},
-                {label:"Fats", value:fats, set:setFats, max:150, color:TOKENS.fats, kcal:fats*9},
+                {label:"Proteína", value:protein, set:setProtein, max:300, color:TOKENS.protein, kcal:protein*4},
+                {label:"Carbohidratos", value:carbs, set:setCarbs, max:500, color:TOKENS.carbs, kcal:carbs*4},
+                {label:"Grasas", value:fats, set:setFats, max:150, color:TOKENS.fats, kcal:fats*9},
               ].map(m => (
                 <div key={m.label}>
                   <div className="flex justify-between items-baseline mb-2">
@@ -303,9 +303,9 @@ function Onboarding() {
             <div className="rounded-2xl border border-lime-300/20 bg-gradient-to-br from-lime-300/[0.08] to-transparent p-4">
               <div className="flex items-center gap-2 mb-2">
                 <Sparkles size={12} className="text-lime-300"/>
-                <Mono className="text-[10px] uppercase tracking-wider text-lime-300">profile complete</Mono>
+                <Mono className="text-[10px] uppercase tracking-wider text-lime-300">perfil completo</Mono>
               </div>
-              <div className="text-sm text-white/80">Total: <Mono className="text-white">{protein*4 + carbs*4 + fats*9}</Mono> kcal · <Mono>{Math.round(protein*4/cals*100)}P</Mono>/<Mono>{Math.round(carbs*4/cals*100)}C</Mono>/<Mono>{Math.round(fats*9/cals*100)}F</Mono></div>
+              <div className="text-sm text-white/80">Total: <Mono className="text-white">{protein*4 + carbs*4 + fats*9}</Mono> kcal · <Mono>{Math.round(protein*4/cals*100)}P</Mono>/<Mono>{Math.round(carbs*4/cals*100)}C</Mono>/<Mono>{Math.round(fats*9/cals*100)}G</Mono></div>
             </div>
           </div>
         )}
@@ -318,7 +318,7 @@ function Onboarding() {
           </Btn>
         )}
         <Btn className="flex-1 flex items-center justify-center gap-2" onClick={()=>setStep(Math.min(3, step+1))}>
-          {step === 3 ? "Enter MacroMeal" : "Continue"} <ArrowRight size={16}/>
+          {step === 3 ? "Entrar a MacroMeal" : "Continuar"} <ArrowRight size={16}/>
         </Btn>
       </div>
     </Phone>
@@ -336,14 +336,14 @@ function Dashboard() {
   };
 
   return (
-    <Phone title="02 — home dashboard">
+    <Phone title="02 — dashboard">
       <div className="px-6 pt-4 pb-6">
         <div className="flex items-start justify-between mb-6">
           <div>
             <div className="flex items-center gap-2">
-              <Mono className="text-[10px] uppercase tracking-[0.2em] text-white/40">tue · 14:22</Mono>
+              <Mono className="text-[10px] uppercase tracking-[0.2em] text-white/40">mar · 14:22</Mono>
               <div className="w-1 h-1 rounded-full bg-lime-300 animate-pulse"/>
-              <Mono className="text-[10px] uppercase tracking-[0.2em] text-lime-300">live</Mono>
+              <Mono className="text-[10px] uppercase tracking-[0.2em] text-lime-300">en vivo</Mono>
             </div>
             <h1 className="text-2xl font-medium text-white mt-1" style={{fontFamily:"Geist"}}>
               Hola, <span style={{fontFamily:"Instrument Serif",fontStyle:"italic"}}>Sebastian</span>
@@ -358,13 +358,13 @@ function Dashboard() {
         <div className="relative rounded-3xl border border-white/8 bg-gradient-to-br from-white/[0.04] via-white/[0.01] to-transparent p-6 mb-4 overflow-hidden">
           <div className="absolute -top-12 -right-12 w-40 h-40 bg-lime-300/10 rounded-full blur-3xl"/>
           <div className="flex items-center gap-5">
-            <Ring value={data.cals.v} max={data.cals.t} color={TOKENS.lime} size={130} stroke={9} label="kcal" sub={`${data.cals.t - data.cals.v} left`}/>
+            <Ring value={data.cals.v} max={data.cals.t} color={TOKENS.lime} size={130} stroke={9} label="kcal" sub={`faltan ${data.cals.t - data.cals.v}`}/>
             <div className="flex-1 space-y-1">
-              <Mono className="text-[10px] uppercase tracking-wider text-white/40">today.budget</Mono>
+              <Mono className="text-[10px] uppercase tracking-wider text-white/40">hoy.disponible</Mono>
               <div className="text-3xl font-medium text-white tabular-nums" style={{fontFamily:"Geist"}}>{data.cals.t - data.cals.v}</div>
-              <div className="text-xs text-white/50">kcal remaining</div>
+              <div className="text-xs text-white/50">kcal restantes</div>
               <div className="flex items-center gap-1.5 mt-2 text-[11px] text-lime-300">
-                <TrendingUp size={11}/> <Mono>+12% vs avg</Mono>
+                <TrendingUp size={11}/> <Mono>+12% vs prom</Mono>
               </div>
             </div>
           </div>
@@ -373,12 +373,12 @@ function Dashboard() {
         {/* macro bars */}
         <div className="rounded-3xl border border-white/8 bg-white/[0.02] p-5 space-y-4 mb-4">
           <div className="flex items-center justify-between">
-            <Mono className="text-[10px] uppercase tracking-wider text-white/40">macro.split</Mono>
-            <Tag>real-time</Tag>
+            <Mono className="text-[10px] uppercase tracking-wider text-white/40">distribución.macros</Mono>
+            <Tag>tiempo real</Tag>
           </div>
-          <MacroBar label="Protein" value={data.p.v} target={data.p.t} color={TOKENS.protein}/>
-          <MacroBar label="Carbs" value={data.c.v} target={data.c.t} color={TOKENS.carbs}/>
-          <MacroBar label="Fats" value={data.f.v} target={data.f.t} color={TOKENS.fats}/>
+          <MacroBar label="Proteína" value={data.p.v} target={data.p.t} color={TOKENS.protein}/>
+          <MacroBar label="Carbohidratos" value={data.c.v} target={data.c.t} color={TOKENS.carbs}/>
+          <MacroBar label="Grasas" value={data.f.v} target={data.f.t} color={TOKENS.fats}/>
         </div>
 
         {/* smart recommendation card */}
@@ -392,15 +392,15 @@ function Dashboard() {
               <Mono className="text-[10px] uppercase tracking-wider text-lime-300">macromeal.ai</Mono>
               <div className="ml-auto flex items-center gap-1">
                 <div className="w-1 h-1 rounded-full bg-lime-300 animate-pulse"/>
-                <Mono className="text-[9px] text-lime-300/70">analyzing</Mono>
+                <Mono className="text-[9px] text-lime-300/70">analizando</Mono>
               </div>
             </div>
             <p className="text-white text-[15px] leading-snug mb-1">
-              You still need <Mono className="text-lime-300">38g protein</Mono> and <Mono className="text-lime-300">52g carbs</Mono> today.
+              Aún te faltan <Mono className="text-lime-300">38g de proteína</Mono> y <Mono className="text-lime-300">52g de carbos</Mono> hoy.
             </p>
-            <p className="text-xs text-white/40 mb-4">Best window: next 2h post-workout.</p>
+            <p className="text-xs text-white/40 mb-4">Mejor ventana: próximas 2h post-entreno.</p>
             <Btn className="w-full flex items-center justify-center gap-2">
-              <Sparkles size={14}/> Complete my macros
+              <Sparkles size={14}/> Completar mis macros
             </Btn>
           </div>
         </div>
@@ -408,9 +408,9 @@ function Dashboard() {
         {/* mini stats */}
         <div className="grid grid-cols-3 gap-2 mt-4">
           {[
-            { l: "Streak", v: "14", u: "days", c: TOKENS.lime },
-            { l: "Adherence", v: "94", u: "%", c: TOKENS.protein },
-            { l: "Orders", v: "3", u: "today", c: TOKENS.carbs },
+            { l: "Racha", v: "14", u: "días", c: TOKENS.lime },
+            { l: "Cumplim.", v: "94", u: "%", c: TOKENS.protein },
+            { l: "Pedidos", v: "3", u: "hoy", c: TOKENS.carbs },
           ].map(s => (
             <div key={s.l} className="rounded-2xl border border-white/8 bg-white/[0.02] p-3">
               <Mono className="text-[9px] uppercase tracking-wider text-white/40">{s.l}</Mono>
@@ -443,17 +443,17 @@ function SmartAuto() {
   const need = { p: 40, c: 50, f: 10 };
   const meals = [
     {
-      name: "Grilled Chicken · Jasmine Rice",
-      tag: "Optimized for your goals today",
+      name: "Pollo a la plancha · Arroz jazmín",
+      tag: "Optimizado para tu meta de hoy",
       tagTone: "lime",
       p: 42, c: 52, f: 9,
       kcal: 457, price: 18.40,
       confidence: 98,
-      best: "Best post-workout",
+      best: "Mejor opción post-entreno",
     },
     {
-      name: "Lomo Saltado · Quinoa Bowl",
-      tag: "Highest protein density",
+      name: "Lomo saltado · Bowl de quinua",
+      tag: "Mayor densidad proteica",
       p: 38, c: 48, f: 12,
       kcal: 452, price: 21.20,
       confidence: 91,
@@ -461,13 +461,13 @@ function SmartAuto() {
   ];
 
   return (
-    <Phone title="03 — smart auto">
+    <Phone title="03 — modo automático">
       <div className="px-6 pt-4 pb-6">
         <div className="flex items-center justify-between mb-5">
           <button className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/70">
             <ChevronLeft size={18}/>
           </button>
-          <Mono className="text-[10px] uppercase tracking-[0.2em] text-white/40">auto.mode</Mono>
+          <Mono className="text-[10px] uppercase tracking-[0.2em] text-white/40">modo.auto</Mono>
           <div className="w-9"/>
         </div>
 
@@ -475,24 +475,24 @@ function SmartAuto() {
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-lime-300/30 bg-lime-300/5 mb-4">
             <Cpu size={11} className="text-lime-300"/>
-            <Mono className="text-[10px] uppercase tracking-wider text-lime-300">AI · analyzing your gap</Mono>
+            <Mono className="text-[10px] uppercase tracking-wider text-lime-300">IA · analizando tu déficit</Mono>
           </div>
           <h2 className="text-2xl font-medium text-white leading-tight" style={{fontFamily:"Geist"}}>
-            Meals that <span style={{fontFamily:"Instrument Serif",fontStyle:"italic"}}>complete</span> your day.
+            Comidas que <span style={{fontFamily:"Instrument Serif",fontStyle:"italic"}}>completan</span> tu día.
           </h2>
         </div>
 
         {/* gap analysis */}
         <div className="rounded-3xl border border-white/8 bg-white/[0.02] p-4 mb-4">
           <div className="flex items-center justify-between mb-3">
-            <Mono className="text-[10px] uppercase tracking-wider text-white/40">remaining.macros</Mono>
-            <Mono className="text-[10px] text-white/40">target.match</Mono>
+            <Mono className="text-[10px] uppercase tracking-wider text-white/40">macros.restantes</Mono>
+            <Mono className="text-[10px] text-white/40">match.target</Mono>
           </div>
           <div className="grid grid-cols-3 gap-3">
             {[
-              { k:"Protein", v:need.p, c:TOKENS.protein},
-              { k:"Carbs", v:need.c, c:TOKENS.carbs},
-              { k:"Fats", v:need.f, c:TOKENS.fats},
+              { k:"Proteína", v:need.p, c:TOKENS.protein},
+              { k:"Carbos", v:need.c, c:TOKENS.carbs},
+              { k:"Grasas", v:need.f, c:TOKENS.fats},
             ].map(x => (
               <div key={x.k} className="rounded-2xl border border-white/5 bg-black/40 p-3 text-center">
                 <Mono className="text-[9px] uppercase tracking-wider text-white/40">{x.k}</Mono>
@@ -536,7 +536,7 @@ function SmartAuto() {
                   {[
                     {l:"P", v:m.p, c:TOKENS.protein, u:"g"},
                     {l:"C", v:m.c, c:TOKENS.carbs, u:"g"},
-                    {l:"F", v:m.f, c:TOKENS.fats, u:"g"},
+                    {l:"G", v:m.f, c:TOKENS.fats, u:"g"},
                     {l:"kcal", v:m.kcal, c:"#FFF", u:""},
                   ].map(x => (
                     <div key={x.l} className="rounded-xl border border-white/5 bg-black/30 p-2 text-center">
@@ -548,13 +548,13 @@ function SmartAuto() {
 
                 <div className="flex items-center justify-between pt-3 border-t border-white/5">
                   <div>
-                    <Mono className="text-[9px] uppercase tracking-wider text-white/40">dynamic.price</Mono>
+                    <Mono className="text-[9px] uppercase tracking-wider text-white/40">precio.dinámico</Mono>
                     <div className="flex items-baseline gap-1">
                       <Mono className="text-xl text-white tabular-nums">S/{m.price.toFixed(2)}</Mono>
                     </div>
                   </div>
                   <Btn variant={i===0 ? "primary" : "ghost"} className="!py-2.5 !px-4 text-xs">
-                    Order <ArrowRight size={14} className="inline ml-1"/>
+                    Pedir <ArrowRight size={14} className="inline ml-1"/>
                   </Btn>
                 </div>
               </div>
@@ -563,7 +563,7 @@ function SmartAuto() {
         </div>
 
         <button className="mt-4 w-full text-center text-xs text-white/40 hover:text-white py-2 font-mono">
-          regenerate suggestions ↻
+          regenerar sugerencias ↻
         </button>
       </div>
     </Phone>
@@ -575,18 +575,18 @@ function SmartAuto() {
 function Builder() {
   const ingredients = {
     protein: [
-      { id: "ch", name: "Chicken breast", p: 31, c: 0, f: 3.6, kcal: 165, price: 0.18, unit: 100 },
-      { id: "sa", name: "Salmon", p: 22, c: 0, f: 13, kcal: 208, price: 0.32, unit: 100 },
+      { id: "ch", name: "Pechuga de pollo", p: 31, c: 0, f: 3.6, kcal: 165, price: 0.18, unit: 100 },
+      { id: "sa", name: "Salmón", p: 22, c: 0, f: 13, kcal: 208, price: 0.32, unit: 100 },
       { id: "tof", name: "Tofu", p: 8, c: 2, f: 4, kcal: 76, price: 0.10, unit: 100 },
     ],
     carbs: [
-      { id: "ri", name: "Jasmine rice", p: 2.7, c: 28, f: 0.3, kcal: 130, price: 0.04, unit: 100 },
-      { id: "qu", name: "Quinoa", p: 4.4, c: 21, f: 1.9, kcal: 120, price: 0.09, unit: 100 },
-      { id: "sw", name: "Sweet potato", p: 1.6, c: 20, f: 0.1, kcal: 86, price: 0.05, unit: 100 },
+      { id: "ri", name: "Arroz jazmín", p: 2.7, c: 28, f: 0.3, kcal: 130, price: 0.04, unit: 100 },
+      { id: "qu", name: "Quinua", p: 4.4, c: 21, f: 1.9, kcal: 120, price: 0.09, unit: 100 },
+      { id: "sw", name: "Camote", p: 1.6, c: 20, f: 0.1, kcal: 86, price: 0.05, unit: 100 },
     ],
     fats: [
-      { id: "av", name: "Avocado", p: 2, c: 9, f: 15, kcal: 160, price: 0.12, unit: 100 },
-      { id: "ol", name: "Olive oil", p: 0, c: 0, f: 14, kcal: 119, price: 0.06, unit: 15 },
+      { id: "av", name: "Palta", p: 2, c: 9, f: 15, kcal: 160, price: 0.12, unit: 100 },
+      { id: "ol", name: "Aceite de oliva", p: 0, c: 0, f: 14, kcal: 119, price: 0.06, unit: 15 },
     ],
   };
 
@@ -620,27 +620,27 @@ function Builder() {
   };
 
   return (
-    <Phone title="04 — build your own">
+    <Phone title="04 — arma tu plato">
       <div className="px-6 pt-4">
         <div className="flex items-center justify-between mb-5">
           <button className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/70">
             <ChevronLeft size={18}/>
           </button>
-          <Mono className="text-[10px] uppercase tracking-[0.2em] text-white/40">build.mode</Mono>
+          <Mono className="text-[10px] uppercase tracking-[0.2em] text-white/40">modo.armado</Mono>
           <div className="w-9"/>
         </div>
 
         <h2 className="text-2xl font-medium text-white leading-tight mb-1" style={{fontFamily:"Geist"}}>
-          Compose your <span style={{fontFamily:"Instrument Serif",fontStyle:"italic"}}>plate</span>.
+          Arma tu <span style={{fontFamily:"Instrument Serif",fontStyle:"italic"}}>plato</span>.
         </h2>
-        <p className="text-xs text-white/40 mb-5">Live macros · Live price · Per gram.</p>
+        <p className="text-xs text-white/40 mb-5">Macros en vivo · Precio en vivo · Por gramo.</p>
 
         {/* tabs */}
         <div className="flex gap-1 p-1 rounded-full border border-white/8 bg-white/[0.02] mb-4">
           {[
-            {k:"protein", l:"Protein", icon:Beef},
-            {k:"carbs", l:"Carbs", icon:Wheat},
-            {k:"fats", l:"Fats", icon:Droplet},
+            {k:"protein", l:"Proteína", icon:Beef},
+            {k:"carbs", l:"Carbos", icon:Wheat},
+            {k:"fats", l:"Grasas", icon:Droplet},
           ].map(t => {
             const Icon = t.icon;
             return (
@@ -662,7 +662,7 @@ function Builder() {
                   <div className="flex-1 min-w-0">
                     <div className="text-white text-sm font-medium">{ing.name}</div>
                     <div className="mt-0.5 flex items-center gap-2 text-[10px] text-white/40 font-mono">
-                      <span>{ing.p}P</span>·<span>{ing.c}C</span>·<span>{ing.f}F</span>·<span className="text-lime-300/80">S/{ing.price.toFixed(2)}/g</span>
+                      <span>{ing.p}P</span>·<span>{ing.c}C</span>·<span>{ing.f}G</span>·<span className="text-lime-300/80">S/{ing.price.toFixed(2)}/g</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 ml-3">
@@ -688,7 +688,7 @@ function Builder() {
             {[
               {l:"P", v:tot.p.toFixed(0), c:TOKENS.protein, u:"g"},
               {l:"C", v:tot.c.toFixed(0), c:TOKENS.carbs, u:"g"},
-              {l:"F", v:tot.f.toFixed(0), c:TOKENS.fats, u:"g"},
+              {l:"G", v:tot.f.toFixed(0), c:TOKENS.fats, u:"g"},
               {l:"kcal", v:tot.k.toFixed(0), c:"#FFF", u:""},
             ].map(x => (
               <div key={x.l} className="text-center">
@@ -701,13 +701,13 @@ function Builder() {
           </div>
           <div className="flex items-center gap-3">
             <div className="flex-1">
-              <Mono className="text-[9px] uppercase tracking-wider text-white/40">total.dynamic</Mono>
+              <Mono className="text-[9px] uppercase tracking-wider text-white/40">total.dinámico</Mono>
               <div className="flex items-baseline gap-1">
                 <Mono className="text-2xl text-white tabular-nums">S/{tot.price.toFixed(2)}</Mono>
               </div>
             </div>
             <Btn className="flex items-center gap-2">
-              Add to order <ArrowRight size={14}/>
+              Agregar al pedido <ArrowRight size={14}/>
             </Btn>
           </div>
         </div>
@@ -727,29 +727,29 @@ function Pricing() {
   const kcal = p*4 + c*4 + f*9;
 
   return (
-    <Phone title="05 — pricing engine">
+    <Phone title="05 — motor de precios">
       <div className="px-6 pt-4 pb-6">
         <div className="flex items-center justify-between mb-5">
           <button className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/70">
             <ChevronLeft size={18}/>
           </button>
-          <Mono className="text-[10px] uppercase tracking-[0.2em] text-white/40">pricing.engine</Mono>
+          <Mono className="text-[10px] uppercase tracking-[0.2em] text-white/40">motor.precios</Mono>
           <div className="w-9"/>
         </div>
 
         <div className="mb-6">
-          <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-lime-300/70 mb-2">how it works</div>
+          <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-lime-300/70 mb-2">cómo funciona</div>
           <h2 className="text-2xl font-medium text-white leading-tight" style={{fontFamily:"Geist"}}>
-            You pay <span style={{fontFamily:"Instrument Serif",fontStyle:"italic"}}>per gram</span>.<br/>Not per plate.
+            Pagas <span style={{fontFamily:"Instrument Serif",fontStyle:"italic"}}>por gramo</span>.<br/>No por plato.
           </h2>
         </div>
 
         {/* per-gram rate cards */}
         <div className="space-y-2 mb-5">
           {[
-            { l: "Protein", v: rates.p, c: TOKENS.protein, src:"chicken · fish · tofu · whey"},
-            { l: "Carbs", v: rates.c, c: TOKENS.carbs, src:"rice · quinoa · oats · sweet potato"},
-            { l: "Fats", v: rates.f, c: TOKENS.fats, src:"avocado · olive oil · nuts"},
+            { l: "Proteína", v: rates.p, c: TOKENS.protein, src:"pollo · pescado · tofu · whey"},
+            { l: "Carbohidratos", v: rates.c, c: TOKENS.carbs, src:"arroz · quinua · avena · camote"},
+            { l: "Grasas", v: rates.f, c: TOKENS.fats, src:"palta · aceite de oliva · frutos secos"},
           ].map(r => (
             <div key={r.l} className="rounded-2xl border border-white/8 bg-white/[0.02] p-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
@@ -763,7 +763,7 @@ function Pricing() {
               </div>
               <div className="text-right">
                 <Mono className="text-base text-white tabular-nums">S/{r.v.toFixed(2)}</Mono>
-                <Mono className="block text-[9px] text-white/40 -mt-0.5">per gram</Mono>
+                <Mono className="block text-[9px] text-white/40 -mt-0.5">por gramo</Mono>
               </div>
             </div>
           ))}
@@ -772,15 +772,15 @@ function Pricing() {
         {/* interactive calculator */}
         <div className="rounded-3xl border border-lime-300/20 bg-gradient-to-br from-lime-300/[0.06] to-transparent p-5">
           <div className="flex items-center justify-between mb-4">
-            <Mono className="text-[10px] uppercase tracking-wider text-lime-300">live.calculator</Mono>
-            <Tag tone="lime">drag to test</Tag>
+            <Mono className="text-[10px] uppercase tracking-wider text-lime-300">calculadora.en.vivo</Mono>
+            <Tag tone="lime">arrastra para probar</Tag>
           </div>
 
           <div className="space-y-4 mb-5">
             {[
-              {l:"Protein (g)", v:p, set:setP, max:80, c:TOKENS.protein, r:rates.p},
-              {l:"Carbs (g)", v:c, set:setC, max:120, c:TOKENS.carbs, r:rates.c},
-              {l:"Fats (g)", v:f, set:setF, max:40, c:TOKENS.fats, r:rates.f},
+              {l:"Proteína (g)", v:p, set:setP, max:80, c:TOKENS.protein, r:rates.p},
+              {l:"Carbos (g)", v:c, set:setC, max:120, c:TOKENS.carbs, r:rates.c},
+              {l:"Grasas (g)", v:f, set:setF, max:40, c:TOKENS.fats, r:rates.f},
             ].map(m => (
               <div key={m.l}>
                 <div className="flex justify-between items-baseline mb-1.5">
@@ -807,7 +807,7 @@ function Pricing() {
         </div>
 
         <div className="mt-4 text-[11px] text-white/40 leading-relaxed">
-          <Mono className="text-white/60">No markup on meals.</Mono> You pay the exact macro composition you ordered. Transparent. Auditable.
+          <Mono className="text-white/60">Sin sobreprecio en los platos.</Mono> Pagas la composición exacta de macros que pediste. Transparente. Auditable.
         </div>
       </div>
     </Phone>
@@ -824,20 +824,20 @@ function Tracking() {
   }, [stage]);
 
   const stages = [
-    { k:"cooking", l:"Cooking", icon:ChefHat },
-    { k:"prep", l:"Preparing", icon:Package },
-    { k:"way", l:"On the way", icon:Bike },
-    { k:"done", l:"Delivered", icon:Check },
+    { k:"cooking", l:"Cocinando", icon:ChefHat },
+    { k:"prep", l:"Preparando", icon:Package },
+    { k:"way", l:"En camino", icon:Bike },
+    { k:"done", l:"Entregado", icon:Check },
   ];
 
   return (
-    <Phone title="06 — order tracking">
+    <Phone title="06 — seguimiento del pedido">
       <div className="px-6 pt-4 pb-6">
         <div className="flex items-center justify-between mb-5">
           <button className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/70">
             <ChevronLeft size={18}/>
           </button>
-          <Mono className="text-[10px] uppercase tracking-[0.2em] text-white/40">order · #MM-2847</Mono>
+          <Mono className="text-[10px] uppercase tracking-[0.2em] text-white/40">pedido · #MM-2847</Mono>
           <div className="w-9"/>
         </div>
 
@@ -847,9 +847,9 @@ function Tracking() {
           <div className="relative">
             <div className="flex items-center gap-2 mb-2">
               <div className="w-1.5 h-1.5 rounded-full bg-lime-300 animate-pulse"/>
-              <Mono className="text-[10px] uppercase tracking-wider text-lime-300">on.the.way</Mono>
+              <Mono className="text-[10px] uppercase tracking-wider text-lime-300">en.camino</Mono>
             </div>
-            <Mono className="text-[10px] uppercase tracking-wider text-white/40">eta</Mono>
+            <Mono className="text-[10px] uppercase tracking-wider text-white/40">tiempo estimado</Mono>
             <div className="flex items-baseline gap-2 mt-0.5">
               <Mono className="text-5xl text-white tabular-nums font-medium">12</Mono>
               <Mono className="text-white/40">min</Mono>
@@ -879,7 +879,7 @@ function Tracking() {
                   <div className="flex-1">
                     <div className={`text-sm font-medium ${done || active ? "text-white" : "text-white/30"}`}>{s.l}</div>
                     <Mono className={`text-[10px] ${active ? "text-lime-300" : "text-white/30"}`}>
-                      {done ? "✓ complete" : active ? "in progress" : "pending"}
+                      {done ? "✓ completado" : active ? "en proceso" : "pendiente"}
                     </Mono>
                   </div>
                 </div>
@@ -896,7 +896,7 @@ function Tracking() {
           <div className="flex-1">
             <div className="text-sm text-white font-medium">Diego C.</div>
             <div className="flex items-center gap-1.5 text-[10px] text-white/50 font-mono">
-              <Bike size={11}/> Courier · ★ 4.97
+              <Bike size={11}/> Repartidor · ★ 4.97
             </div>
           </div>
           <button className="w-9 h-9 rounded-full bg-lime-300 text-black flex items-center justify-center text-xs font-bold">
@@ -907,14 +907,14 @@ function Tracking() {
         {/* macro summary */}
         <div className="rounded-3xl border border-white/8 bg-white/[0.02] p-4">
           <div className="flex items-center justify-between mb-3">
-            <Mono className="text-[10px] uppercase tracking-wider text-white/40">order.macros</Mono>
+            <Mono className="text-[10px] uppercase tracking-wider text-white/40">macros.del.pedido</Mono>
             <Mono className="text-xs text-white/60">S/ 24.80</Mono>
           </div>
           <div className="grid grid-cols-4 gap-2">
             {[
               {l:"P", v:"42", c:TOKENS.protein},
               {l:"C", v:"58", c:TOKENS.carbs},
-              {l:"F", v:"12", c:TOKENS.fats},
+              {l:"G", v:"12", c:TOKENS.fats},
               {l:"kcal", v:"508", c:"#FFF"},
             ].map(x => (
               <div key={x.l} className="rounded-xl border border-white/5 bg-black/30 p-2 text-center">
@@ -934,24 +934,24 @@ function Tracking() {
 function Analytics() {
   // weekly bars
   const weekly = [
-    { d:"M", p:92, c:88 },
-    { d:"T", p:96, c:91 },
-    { d:"W", p:78, c:82 },
-    { d:"T", p:88, c:90 },
-    { d:"F", p:94, c:87 },
+    { d:"L", p:92, c:88 },
+    { d:"M", p:96, c:91 },
+    { d:"X", p:78, c:82 },
+    { d:"J", p:88, c:90 },
+    { d:"V", p:94, c:87 },
     { d:"S", p:71, c:74 },
-    { d:"S", p:85, c:80 },
+    { d:"D", p:85, c:80 },
   ];
 
   // 5x7 heatmap (last 5 weeks)
   const heat = Array.from({length:35}, () => Math.random());
 
   return (
-    <Phone title="07 — analytics">
+    <Phone title="07 — analíticas">
       <div className="px-6 pt-4 pb-6">
         <div className="flex items-center justify-between mb-5">
           <div>
-            <Mono className="text-[10px] uppercase tracking-[0.2em] text-white/40">profile</Mono>
+            <Mono className="text-[10px] uppercase tracking-[0.2em] text-white/40">perfil</Mono>
             <h2 className="text-xl font-medium text-white" style={{fontFamily:"Geist"}}>
               Sebastian <span style={{fontFamily:"Instrument Serif",fontStyle:"italic", color:TOKENS.lime}}>Kim</span>
             </h2>
@@ -965,14 +965,14 @@ function Analytics() {
         <div className="grid grid-cols-2 gap-2 mb-4">
           <div className="rounded-2xl border border-white/8 bg-white/[0.02] p-4">
             <div className="flex items-center justify-between mb-1">
-              <Mono className="text-[10px] uppercase tracking-wider text-white/40">best.streak</Mono>
+              <Mono className="text-[10px] uppercase tracking-wider text-white/40">mejor.racha</Mono>
               <Award size={12} className="text-lime-300"/>
             </div>
             <Mono className="text-3xl text-white tabular-nums">23<span className="text-white/30 text-sm ml-1">d</span></Mono>
           </div>
           <div className="rounded-2xl border border-white/8 bg-white/[0.02] p-4">
             <div className="flex items-center justify-between mb-1">
-              <Mono className="text-[10px] uppercase tracking-wider text-white/40">adherence</Mono>
+              <Mono className="text-[10px] uppercase tracking-wider text-white/40">cumplimiento</Mono>
               <Target size={12} className="text-lime-300"/>
             </div>
             <Mono className="text-3xl tabular-nums" style={{color:TOKENS.lime}}>94<span className="text-white/30 text-sm ml-1">%</span></Mono>
@@ -982,7 +982,7 @@ function Analytics() {
         {/* weekly chart */}
         <div className="rounded-3xl border border-white/8 bg-white/[0.02] p-5 mb-4">
           <div className="flex items-center justify-between mb-4">
-            <Mono className="text-[10px] uppercase tracking-wider text-white/40">weekly.consistency</Mono>
+            <Mono className="text-[10px] uppercase tracking-wider text-white/40">consistencia.semanal</Mono>
             <div className="flex items-center gap-3 text-[10px] font-mono">
               <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm" style={{background:TOKENS.protein}}/><span className="text-white/60">P</span></div>
               <div className="flex items-center gap-1"><div className="w-2 h-2 rounded-sm" style={{background:TOKENS.carbs}}/><span className="text-white/60">C</span></div>
@@ -1004,8 +1004,8 @@ function Analytics() {
         {/* heatmap */}
         <div className="rounded-3xl border border-white/8 bg-white/[0.02] p-5 mb-4">
           <div className="flex items-center justify-between mb-3">
-            <Mono className="text-[10px] uppercase tracking-wider text-white/40">calorie.adherence · 5w</Mono>
-            <Mono className="text-[10px] text-white/40">less ─ more</Mono>
+            <Mono className="text-[10px] uppercase tracking-wider text-white/40">cumplim.calórico · 5sem</Mono>
+            <Mono className="text-[10px] text-white/40">menos ─ más</Mono>
           </div>
           <div className="grid grid-cols-7 gap-1">
             {heat.map((v, i) => (
@@ -1019,7 +1019,7 @@ function Analytics() {
         {/* body progress */}
         <div className="rounded-3xl border border-white/8 bg-white/[0.02] p-5">
           <div className="flex items-center justify-between mb-3">
-            <Mono className="text-[10px] uppercase tracking-wider text-white/40">body.progress · 8w</Mono>
+            <Mono className="text-[10px] uppercase tracking-wider text-white/40">progreso.corporal · 8sem</Mono>
             <div className="flex items-center gap-1 text-[11px] text-lime-300">
               <TrendingUp size={11}/> <Mono>−2.1kg</Mono>
             </div>
@@ -1038,7 +1038,7 @@ function Analytics() {
             ))}
           </svg>
           <div className="flex justify-between mt-2 text-[10px] text-white/40 font-mono">
-            <span>74.1kg</span><span>now · 72.0kg</span>
+            <span>74.1kg</span><span>ahora · 72.0kg</span>
           </div>
         </div>
       </div>
@@ -1061,12 +1061,12 @@ function Landing() {
             <Mono className="text-sm font-semibold tracking-tight">macromeal<span className="text-lime-300">.</span></Mono>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm text-white/60">
-            <a href="#features" className="hover:text-white transition">Features</a>
-            <a href="#pricing" className="hover:text-white transition">Pricing</a>
+            <a href="#features" className="hover:text-white transition">Funciones</a>
+            <a href="#pricing" className="hover:text-white transition">Precios</a>
             <a href="#faq" className="hover:text-white transition">FAQ</a>
-            <Mono className="text-xs">/EN ES</Mono>
+            <Mono className="text-xs">/ES EN</Mono>
           </div>
-          <Btn className="!py-2 !px-4 text-xs">Get the app</Btn>
+          <Btn className="!py-2 !px-4 text-xs">Descargar app</Btn>
         </div>
       </nav>
 
@@ -1083,29 +1083,29 @@ function Landing() {
           <div className="text-center max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 mb-8">
               <div className="w-1.5 h-1.5 rounded-full bg-lime-300 animate-pulse"/>
-              <Mono className="text-[11px] uppercase tracking-wider text-white/70">Now delivering · Lima</Mono>
+              <Mono className="text-[11px] uppercase tracking-wider text-white/70">Ya entregando · Lima</Mono>
               <ChevronRight size={12} className="text-white/40"/>
             </div>
             <h1 className="text-6xl md:text-8xl font-medium leading-[0.95] tracking-tight" style={{fontFamily:"Geist"}}>
-              Your macros,<br/>
-              <span style={{fontFamily:"Instrument Serif", fontStyle:"italic", color:TOKENS.lime}}>delivered.</span>
+              Tus macros,<br/>
+              <span style={{fontFamily:"Instrument Serif", fontStyle:"italic", color:TOKENS.lime}}>delivery.</span>
             </h1>
             <p className="mt-8 text-lg md:text-xl text-white/50 max-w-xl mx-auto leading-relaxed">
-              Stop calculating macros manually. Pay by the gram. Complete your day in three taps.
+              Deja de calcular macros a mano. Paga por gramo. Completa tu día en tres toques.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
               <Btn className="flex items-center gap-2 !px-6">
-                Start eating with precision <ArrowRight size={16}/>
+                Empieza a comer con precisión <ArrowRight size={16}/>
               </Btn>
               <Btn variant="ghost" className="flex items-center gap-2 !px-6">
-                <Play size={14}/> Watch the 60s demo
+                <Play size={14}/> Ver demo de 60s
               </Btn>
             </div>
 
             <div className="mt-12 flex items-center justify-center gap-8 text-[11px] uppercase tracking-wider text-white/30 font-mono">
-              <span>✓ no meal plans</span>
-              <span>✓ macros guaranteed</span>
-              <span>✓ live pricing</span>
+              <span>✓ sin planes fijos</span>
+              <span>✓ macros garantizadas</span>
+              <span>✓ precios en vivo</span>
             </div>
           </div>
 
@@ -1128,10 +1128,10 @@ function Landing() {
       <section className="border-y border-white/5 bg-white/[0.02]">
         <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { v: "±2g", l: "macro accuracy" },
-            { v: "3 taps", l: "to complete your day" },
-            { v: "S/0.18", l: "per gram of protein" },
-            { v: "12 min", l: "median delivery" },
+            { v: "±2g", l: "precisión por macro" },
+            { v: "3 toques", l: "para cerrar tu día" },
+            { v: "S/0.18", l: "por gramo de proteína" },
+            { v: "12 min", l: "tiempo medio de entrega" },
           ].map((s, i) => (
             <div key={i}>
               <Mono className="text-3xl md:text-4xl text-white tabular-nums">{s.v}</Mono>
@@ -1144,16 +1144,16 @@ function Landing() {
       {/* problem section */}
       <section className="py-24" id="features">
         <div className="max-w-5xl mx-auto px-6">
-          <Mono className="text-[10px] uppercase tracking-[0.2em] text-lime-300 mb-3">the problem</Mono>
+          <Mono className="text-[10px] uppercase tracking-[0.2em] text-lime-300 mb-3">el problema</Mono>
           <h2 className="text-4xl md:text-6xl font-medium leading-[1.05] tracking-tight max-w-3xl" style={{fontFamily:"Geist"}}>
-            Counting macros works.<br/>
-            <span className="text-white/40">Until it doesn&apos;t.</span>
+            Contar macros funciona.<br/>
+            <span className="text-white/40">Hasta que ya no.</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-4 mt-16">
             {[
-              { n:"01", t:"Mentally exhausting", d:"Logging every meal, weighing every gram, recalculating after every craving." },
-              { n:"02", t:"Cooking takes hours", d:"Meal-prep Sunday. Same five recipes. Burnout by week three." },
-              { n:"03", t:"Healthy delivery isn't healthy", d:"Apps lie about calories. No one breaks down per gram. You're guessing." },
+              { n:"01", t:"Cansa mentalmente", d:"Registrar cada comida, pesar cada gramo, recalcular después de cada antojo." },
+              { n:"02", t:"Cocinar toma horas", d:"Meal prep del domingo. Las mismas cinco recetas. Burnout a la tercera semana." },
+              { n:"03", t:"El delivery 'fit' no es fit", d:"Las apps mienten con las calorías. Nadie desglosa por gramo. Estás adivinando." },
             ].map(p => (
               <div key={p.n} className="rounded-2xl border border-white/8 bg-white/[0.02] p-6">
                 <Mono className="text-[10px] text-lime-300">{p.n}</Mono>
@@ -1169,20 +1169,20 @@ function Landing() {
       <section className="py-24 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <Mono className="text-[10px] uppercase tracking-[0.2em] text-lime-300 mb-3">the solution · 01</Mono>
+            <Mono className="text-[10px] uppercase tracking-[0.2em] text-lime-300 mb-3">la solución · 01</Mono>
             <h2 className="text-4xl md:text-5xl font-medium leading-[1.05] tracking-tight" style={{fontFamily:"Geist"}}>
-              Smart Auto Mode <span style={{fontFamily:"Instrument Serif", fontStyle:"italic"}}>completes</span> your macros for you.
+              Modo Automático <span style={{fontFamily:"Instrument Serif", fontStyle:"italic"}}>completa</span> tus macros por ti.
             </h2>
             <p className="mt-6 text-lg text-white/50 leading-relaxed">
-              The app reads what you&apos;ve eaten, calculates the gap, and recommends a meal that fits exactly.
-              No menu scrolling. No guessing.
+              La app lee lo que ya comiste, calcula tu déficit, y te recomienda una comida que encaja exacto.
+              Sin scrollear el menú. Sin adivinar.
             </p>
             <div className="mt-8 space-y-4">
               {[
-                "Real-time macro gap analysis",
-                "Per-meal confidence score",
-                "Post-workout window detection",
-                "Re-rolls if you don't like it",
+                "Análisis de déficit en tiempo real",
+                "Puntaje de confianza por comida",
+                "Detecta tu ventana post-entreno",
+                "Vuelve a sugerir si no te convence",
               ].map(f => (
                 <div key={f} className="flex items-center gap-3 text-sm text-white/80">
                   <div className="w-5 h-5 rounded-full bg-lime-300/20 border border-lime-300/40 flex items-center justify-center">
@@ -1203,13 +1203,13 @@ function Landing() {
                 <Mono className="text-[10px] uppercase tracking-wider text-lime-300">macromeal.ai</Mono>
                 <div className="ml-auto flex items-center gap-1">
                   <div className="w-1 h-1 rounded-full bg-lime-300 animate-pulse"/>
-                  <Mono className="text-[9px] text-lime-300/70">analyzing</Mono>
+                  <Mono className="text-[9px] text-lime-300/70">analizando</Mono>
                 </div>
               </div>
 
-              <Mono className="text-xs text-white/40">{"// gap detected"}</Mono>
+              <Mono className="text-xs text-white/40">{"// déficit detectado"}</Mono>
               <div className="grid grid-cols-3 gap-2 mt-2 mb-4">
-                {[{l:"P",v:38,c:TOKENS.protein},{l:"C",v:52,c:TOKENS.carbs},{l:"F",v:8,c:TOKENS.fats}].map(x=>(
+                {[{l:"P",v:38,c:TOKENS.protein},{l:"C",v:52,c:TOKENS.carbs},{l:"G",v:8,c:TOKENS.fats}].map(x=>(
                   <div key={x.l} className="rounded-xl border border-white/5 bg-black/40 p-3 text-center">
                     <Mono className="text-[9px] text-white/40">{x.l}</Mono>
                     <Mono className="block text-xl tabular-nums" style={{color:x.c}}>{x.v}g</Mono>
@@ -1217,7 +1217,7 @@ function Landing() {
                 ))}
               </div>
 
-              <Mono className="text-xs text-white/40">{"// recommending"}</Mono>
+              <Mono className="text-xs text-white/40">{"// recomendando"}</Mono>
               <div className="mt-2 rounded-2xl border border-lime-300/30 bg-lime-300/[0.08] p-4">
                 <div className="flex items-start justify-between">
                   <div>
@@ -1236,22 +1236,22 @@ function Landing() {
       <section className="py-24 border-t border-white/5" id="pricing">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center">
-            <Mono className="text-[10px] uppercase tracking-[0.2em] text-lime-300 mb-3">the solution · 02</Mono>
+            <Mono className="text-[10px] uppercase tracking-[0.2em] text-lime-300 mb-3">la solución · 02</Mono>
             <h2 className="text-4xl md:text-6xl font-medium leading-[1.05] tracking-tight" style={{fontFamily:"Geist"}}>
-              You pay <span style={{fontFamily:"Instrument Serif", fontStyle:"italic", color:TOKENS.lime}}>per gram</span>.<br/>
-              Not per plate.
+              Pagas <span style={{fontFamily:"Instrument Serif", fontStyle:"italic", color:TOKENS.lime}}>por gramo</span>.<br/>
+              No por plato.
             </h2>
             <p className="mt-6 text-lg text-white/50 max-w-xl mx-auto">
-              Transparent pricing. No padded meal plans. The total is just your macros, multiplied.
+              Precios transparentes. Sin planes inflados. El total es solo tus macros, multiplicadas.
             </p>
           </div>
 
           <div className="mt-16 rounded-3xl border border-white/8 bg-gradient-to-br from-white/[0.03] to-transparent p-8 md:p-12">
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                {l:"Protein", v:"S/0.18", u:"per gram", c:TOKENS.protein, src:"chicken · fish · whey"},
-                {l:"Carbs", v:"S/0.04", u:"per gram", c:TOKENS.carbs, src:"rice · quinoa · oats"},
-                {l:"Fats", v:"S/0.22", u:"per gram", c:TOKENS.fats, src:"avocado · oil · nuts"},
+                {l:"Proteína", v:"S/0.18", u:"por gramo", c:TOKENS.protein, src:"pollo · pescado · whey"},
+                {l:"Carbos", v:"S/0.04", u:"por gramo", c:TOKENS.carbs, src:"arroz · quinua · avena"},
+                {l:"Grasas", v:"S/0.22", u:"por gramo", c:TOKENS.fats, src:"palta · aceite · frutos secos"},
               ].map(r => (
                 <div key={r.l} className="rounded-2xl border border-white/8 bg-black/30 p-6">
                   <div className="flex items-center justify-between mb-4">
@@ -1267,7 +1267,7 @@ function Landing() {
 
             <div className="mt-8 pt-8 border-t border-white/8 grid md:grid-cols-2 gap-6 items-center">
               <div>
-                <Mono className="text-[10px] uppercase tracking-wider text-white/40 mb-2">example · 40P / 60C / 15F</Mono>
+                <Mono className="text-[10px] uppercase tracking-wider text-white/40 mb-2">ejemplo · 40P / 60C / 15G</Mono>
                 <Mono className="text-3xl text-white tabular-nums">
                   S/0.18×40 + S/0.04×60 + S/0.22×15
                 </Mono>
@@ -1285,9 +1285,9 @@ function Landing() {
       <section className="py-24 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <Mono className="text-[10px] uppercase tracking-[0.2em] text-lime-300 mb-3">your dashboard</Mono>
+            <Mono className="text-[10px] uppercase tracking-[0.2em] text-lime-300 mb-3">tu dashboard</Mono>
             <h2 className="text-4xl md:text-5xl font-medium leading-[1.05] tracking-tight" style={{fontFamily:"Geist"}}>
-              Every gram, <span style={{fontFamily:"Instrument Serif", fontStyle:"italic"}}>tracked</span>.
+              Cada gramo, <span style={{fontFamily:"Instrument Serif", fontStyle:"italic"}}>medido</span>.
             </h2>
           </div>
 
@@ -1296,36 +1296,36 @@ function Landing() {
             <div className="relative grid md:grid-cols-3 gap-6">
               <div className="space-y-4">
                 <div className="rounded-2xl border border-white/8 bg-black/40 p-5">
-                  <Mono className="text-[10px] uppercase tracking-wider text-white/40">today · kcal</Mono>
+                  <Mono className="text-[10px] uppercase tracking-wider text-white/40">hoy · kcal</Mono>
                   <Mono className="block text-4xl text-white tabular-nums mt-1">1,620<span className="text-white/30 text-lg ml-1">/2,400</span></Mono>
                   <div className="h-1 mt-3 rounded-full bg-white/5 overflow-hidden">
                     <div className="h-full bg-lime-300 rounded-full" style={{width:"67%", boxShadow:`0 0 8px ${TOKENS.lime}`}}/>
                   </div>
                 </div>
                 <div className="rounded-2xl border border-white/8 bg-black/40 p-5 space-y-3">
-                  <MacroBar label="Protein" value={142} target={180} color={TOKENS.protein}/>
-                  <MacroBar label="Carbs" value={188} target={240} color={TOKENS.carbs}/>
-                  <MacroBar label="Fats" value={48} target={75} color={TOKENS.fats}/>
+                  <MacroBar label="Proteína" value={142} target={180} color={TOKENS.protein}/>
+                  <MacroBar label="Carbos" value={188} target={240} color={TOKENS.carbs}/>
+                  <MacroBar label="Grasas" value={48} target={75} color={TOKENS.fats}/>
                 </div>
               </div>
 
               <div className="flex items-center justify-center">
-                <Ring value={142} max={180} color={TOKENS.protein} size={220} stroke={14} label="protein" unit="g"/>
+                <Ring value={142} max={180} color={TOKENS.protein} size={220} stroke={14} label="proteína" unit="g"/>
               </div>
 
               <div className="space-y-4">
                 <div className="rounded-2xl border border-lime-300/20 bg-lime-300/[0.05] p-5">
                   <div className="flex items-center gap-2 mb-2">
                     <Cpu size={12} className="text-lime-300"/>
-                    <Mono className="text-[10px] uppercase tracking-wider text-lime-300">ai · suggestion</Mono>
+                    <Mono className="text-[10px] uppercase tracking-wider text-lime-300">IA · sugerencia</Mono>
                   </div>
                   <p className="text-sm text-white/80 leading-snug">
-                    You still need <Mono className="text-lime-300">38g protein</Mono> · <Mono className="text-lime-300">52g carbs</Mono>.
+                    Aún te faltan <Mono className="text-lime-300">38g de proteína</Mono> · <Mono className="text-lime-300">52g de carbos</Mono>.
                   </p>
-                  <Btn className="w-full mt-3 !py-2 text-xs">Complete my macros</Btn>
+                  <Btn className="w-full mt-3 !py-2 text-xs">Completar mis macros</Btn>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                  {[{l:"streak", v:"14d"},{l:"adherence", v:"94%"}].map(x=>(
+                  {[{l:"racha", v:"14d"},{l:"cumplim.", v:"94%"}].map(x=>(
                     <div key={x.l} className="rounded-xl border border-white/8 bg-black/40 p-3 text-center">
                       <Mono className="text-[9px] text-white/40 uppercase">{x.l}</Mono>
                       <Mono className="block text-xl text-lime-300 tabular-nums">{x.v}</Mono>
@@ -1342,16 +1342,16 @@ function Landing() {
       <section className="py-24 border-t border-white/5">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
-            <Mono className="text-[10px] uppercase tracking-[0.2em] text-lime-300 mb-3">backed by athletes</Mono>
+            <Mono className="text-[10px] uppercase tracking-[0.2em] text-lime-300 mb-3">respaldado por atletas</Mono>
             <h2 className="text-4xl md:text-5xl font-medium" style={{fontFamily:"Geist"}}>
-              People who <span style={{fontFamily:"Instrument Serif", fontStyle:"italic"}}>actually train</span>.
+              Gente que <span style={{fontFamily:"Instrument Serif", fontStyle:"italic"}}>de verdad entrena</span>.
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-4">
             {[
-              { q: "I used to spend 4 hours every Sunday meal-prepping. Now I just open the app.", a: "Camila R.", r: "CrossFit coach · Lima" },
-              { q: "Pricing per gram changed how I think about food. It's honest math.", a: "Mateo L.", r: "Powerlifter · 110kg class" },
-              { q: "The 'complete my macros' button is genuinely magic. Hit my numbers 38 days straight.", a: "Daniela P.", r: "Physique competitor" },
+              { q: "Antes me pasaba 4 horas cada domingo cocinando para la semana. Ahora abro la app y listo.", a: "Camila R.", r: "Coach de CrossFit · Lima" },
+              { q: "Pagar por gramo cambió cómo veo la comida. Es matemática honesta.", a: "Mateo L.", r: "Powerlifter · -110kg" },
+              { q: "El botón 'completar mis macros' es magia pura. Cumplí mis números 38 días seguidos.", a: "Daniela P.", r: "Competidora de fisicoculturismo" },
             ].map((t, i) => (
               <div key={i} className="rounded-2xl border border-white/8 bg-white/[0.02] p-6 flex flex-col">
                 <Quote size={20} className="text-lime-300/40 mb-4"/>
@@ -1374,17 +1374,17 @@ function Landing() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-lime-300/30 bg-lime-300/5 mb-8">
             <Sparkles size={11} className="text-lime-300"/>
-            <Mono className="text-[10px] uppercase tracking-wider text-lime-300">starting at S/12.90</Mono>
+            <Mono className="text-[10px] uppercase tracking-wider text-lime-300">desde S/12.90</Mono>
           </div>
           <h2 className="text-5xl md:text-7xl font-medium leading-[0.95] tracking-tight" style={{fontFamily:"Geist"}}>
-            Complete your macros<br/>
-            <span style={{fontFamily:"Instrument Serif", fontStyle:"italic", color:TOKENS.lime}}>without thinking</span>.
+            Completa tus macros<br/>
+            <span style={{fontFamily:"Instrument Serif", fontStyle:"italic", color:TOKENS.lime}}>sin pensarlo</span>.
           </h2>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Btn className="flex items-center gap-2 !px-6">Get the app <ArrowRight size={16}/></Btn>
-            <Btn variant="ghost" className="!px-6">Talk to founder</Btn>
+            <Btn className="flex items-center gap-2 !px-6">Descargar app <ArrowRight size={16}/></Btn>
+            <Btn variant="ghost" className="!px-6">Hablar con el fundador</Btn>
           </div>
-          <Mono className="block mt-8 text-[10px] uppercase tracking-wider text-white/30">free for your first 3 meals</Mono>
+          <Mono className="block mt-8 text-[10px] uppercase tracking-wider text-white/30">tus primeras 3 comidas son gratis</Mono>
         </div>
       </section>
 
@@ -1399,25 +1399,25 @@ function Landing() {
               <Mono className="text-sm font-semibold">macromeal<span className="text-lime-300">.</span></Mono>
             </div>
             <p className="text-sm text-white/40 max-w-sm leading-relaxed">
-              Precision nutrition for people who train. Built in Lima, Peru.
+              Nutrición de precisión para gente que entrena. Hecho en Lima, Perú.
             </p>
           </div>
           <div>
-            <Mono className="text-[10px] uppercase tracking-wider text-white/40 mb-3">product</Mono>
+            <Mono className="text-[10px] uppercase tracking-wider text-white/40 mb-3">producto</Mono>
             <div className="space-y-2 text-sm text-white/60">
-              <div>Smart Auto</div><div>Build Your Own</div><div>Pricing</div>
+              <div>Modo Automático</div><div>Arma tu Plato</div><div>Precios</div>
             </div>
           </div>
           <div>
-            <Mono className="text-[10px] uppercase tracking-wider text-white/40 mb-3">company</Mono>
+            <Mono className="text-[10px] uppercase tracking-wider text-white/40 mb-3">empresa</Mono>
             <div className="space-y-2 text-sm text-white/60">
-              <div>About</div><div>Press</div><div>Careers</div>
+              <div>Nosotros</div><div>Prensa</div><div>Trabaja con nosotros</div>
             </div>
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between gap-4">
           <Mono className="text-[10px] uppercase tracking-wider text-white/30">© 2026 macromeal s.a.c · lima, pe</Mono>
-          <Mono className="text-[10px] uppercase tracking-wider text-white/30">v.0.4.2 · status · all systems normal</Mono>
+          <Mono className="text-[10px] uppercase tracking-wider text-white/30">v.0.4.2 · estado · todo operativo</Mono>
         </div>
       </footer>
     </div>
@@ -1427,18 +1427,18 @@ function Landing() {
 function FAQSection() {
   const [open, setOpen] = useState(0);
   const faqs = [
-    { q: "How accurate are the macros?", a: "Within ±2 grams per macro per meal. Every ingredient is weighed before plating and re-verified at dispatch. We publish our weighing logs on request." },
-    { q: "What's the minimum order?", a: "There isn't one. You can order a single 80g chicken breast at S/14.40 if that's what closes your day. Most users place 1-2 orders daily." },
-    { q: "Do I have to follow a meal plan?", a: "No. MacroMeal works backwards from your daily macro target. You can use Smart Auto, build your own, or both — the app just makes sure your numbers hit." },
-    { q: "What's your delivery range?", a: "Currently Miraflores, San Isidro, Barranco, and Surco in Lima. Median delivery is 12 minutes. Expanding to Lima Norte in Q3 2026." },
-    { q: "Can I see what's in each meal?", a: "Yes. Every meal exposes its ingredient breakdown by gram. You can audit any order in your history and we'll show you the exact composition." },
+    { q: "¿Qué tan precisas son las macros?", a: "Dentro de ±2 gramos por macro por comida. Cada ingrediente se pesa antes de servir y se vuelve a verificar al despachar. Publicamos nuestros registros de pesaje si los pides." },
+    { q: "¿Cuál es el pedido mínimo?", a: "No hay. Puedes pedir una sola pechuga de pollo de 80g a S/14.40 si eso cierra tu día. La mayoría de usuarios hace 1-2 pedidos diarios." },
+    { q: "¿Tengo que seguir un plan de comidas?", a: "No. MacroMeal trabaja desde tu meta diaria de macros. Puedes usar Modo Automático, armar tu plato, o ambos — la app solo se asegura de que tus números cuadren." },
+    { q: "¿A qué zonas entregan?", a: "Actualmente Miraflores, San Isidro, Barranco y Surco en Lima. El tiempo medio de entrega es 12 minutos. Expandiendo a Lima Norte el Q3 de 2026." },
+    { q: "¿Puedo ver qué hay en cada comida?", a: "Sí. Cada comida muestra su desglose de ingredientes por gramo. Puedes auditar cualquier pedido en tu historial y te mostramos la composición exacta." },
   ];
   return (
     <section className="py-24 border-t border-white/5" id="faq">
       <div className="max-w-3xl mx-auto px-6">
-        <Mono className="text-[10px] uppercase tracking-[0.2em] text-lime-300 mb-3">questions</Mono>
+        <Mono className="text-[10px] uppercase tracking-[0.2em] text-lime-300 mb-3">preguntas</Mono>
         <h2 className="text-4xl md:text-5xl font-medium leading-[1.05] tracking-tight mb-12" style={{fontFamily:"Geist"}}>
-          Things you&apos;ll <span style={{fontFamily:"Instrument Serif", fontStyle:"italic"}}>probably</span> ask.
+          Lo que <span style={{fontFamily:"Instrument Serif", fontStyle:"italic"}}>seguro</span> vas a preguntar.
         </h2>
         <div className="space-y-2">
           {faqs.map((f, i) => (
@@ -1471,15 +1471,15 @@ function MiniPhoneHero({ variant }) {
 
         {variant === "dashboard" && (
           <div>
-            <Mono className="text-[8px] uppercase tracking-wider text-white/40">today</Mono>
+            <Mono className="text-[8px] uppercase tracking-wider text-white/40">hoy</Mono>
             <div className="text-base text-white font-medium" style={{fontFamily:"Geist"}}>Hola, Sebastian</div>
             <div className="mt-3 flex justify-center">
-              <Ring value={1620} max={2400} color={TOKENS.lime} size={130} stroke={9} label="kcal" sub="780 left"/>
+              <Ring value={1620} max={2400} color={TOKENS.lime} size={130} stroke={9} label="kcal" sub="faltan 780"/>
             </div>
             <div className="mt-3 space-y-2">
               <MacroBar label="P" value={142} target={180} color={TOKENS.protein}/>
               <MacroBar label="C" value={188} target={240} color={TOKENS.carbs}/>
-              <MacroBar label="F" value={48} target={75} color={TOKENS.fats}/>
+              <MacroBar label="G" value={48} target={75} color={TOKENS.fats}/>
             </div>
           </div>
         )}
@@ -1488,11 +1488,11 @@ function MiniPhoneHero({ variant }) {
           <div>
             <div className="flex items-center gap-1.5 mb-2">
               <Cpu size={10} className="text-lime-300"/>
-              <Mono className="text-[8px] uppercase text-lime-300 tracking-wider">auto.mode</Mono>
+              <Mono className="text-[8px] uppercase text-lime-300 tracking-wider">modo.auto</Mono>
             </div>
-            <Mono className="text-[8px] uppercase tracking-wider text-white/40">gap detected</Mono>
+            <Mono className="text-[8px] uppercase tracking-wider text-white/40">déficit detectado</Mono>
             <div className="grid grid-cols-3 gap-1 mt-2 mb-3">
-              {[{l:"P",v:38,c:TOKENS.protein},{l:"C",v:52,c:TOKENS.carbs},{l:"F",v:8,c:TOKENS.fats}].map(x=>(
+              {[{l:"P",v:38,c:TOKENS.protein},{l:"C",v:52,c:TOKENS.carbs},{l:"G",v:8,c:TOKENS.fats}].map(x=>(
                 <div key={x.l} className="rounded-lg border border-white/5 bg-black/40 p-2 text-center">
                   <Mono className="text-[7px] text-white/40">{x.l}</Mono>
                   <Mono className="block text-sm tabular-nums" style={{color:x.c}}>{x.v}g</Mono>
@@ -1503,7 +1503,7 @@ function MiniPhoneHero({ variant }) {
               <div className="text-[11px] text-white font-medium leading-tight">Pollo · Arroz Jazmín</div>
               <Mono className="text-[8px] text-lime-300 mt-1">match · 98%</Mono>
               <div className="grid grid-cols-4 gap-1 mt-2">
-                {[{l:"P",v:42,c:TOKENS.protein},{l:"C",v:52,c:TOKENS.carbs},{l:"F",v:9,c:TOKENS.fats},{l:"kc",v:457,c:"#FFF"}].map(x=>(
+                {[{l:"P",v:42,c:TOKENS.protein},{l:"C",v:52,c:TOKENS.carbs},{l:"G",v:9,c:TOKENS.fats},{l:"kc",v:457,c:"#FFF"}].map(x=>(
                   <div key={x.l} className="text-center">
                     <Mono className="text-[7px] text-white/40">{x.l}</Mono>
                     <Mono className="block text-[9px] tabular-nums" style={{color:x.c}}>{x.v}</Mono>
@@ -1517,13 +1517,13 @@ function MiniPhoneHero({ variant }) {
 
         {variant === "build" && (
           <div>
-            <Mono className="text-[8px] uppercase tracking-wider text-white/40">build.mode</Mono>
-            <div className="text-base text-white font-medium" style={{fontFamily:"Geist"}}>Compose your plate</div>
+            <Mono className="text-[8px] uppercase tracking-wider text-white/40">arma.tu.plato</Mono>
+            <div className="text-base text-white font-medium" style={{fontFamily:"Geist"}}>Compón tu plato</div>
             <div className="mt-3 space-y-2">
               {[
-                {n:"Chicken breast", g:150, p:TOKENS.protein},
-                {n:"Jasmine rice", g:200, p:TOKENS.carbs},
-                {n:"Avocado", g:50, p:TOKENS.fats},
+                {n:"Pechuga de pollo", g:150, p:TOKENS.protein},
+                {n:"Arroz jazmín", g:200, p:TOKENS.carbs},
+                {n:"Palta", g:50, p:TOKENS.fats},
               ].map(i=>(
                 <div key={i.n} className="rounded-xl border border-lime-300/20 bg-lime-300/[0.04] p-2 flex items-center justify-between">
                   <div>
@@ -1536,7 +1536,7 @@ function MiniPhoneHero({ variant }) {
             </div>
             <div className="mt-3 rounded-xl border border-white/10 bg-zinc-900 p-3">
               <div className="grid grid-cols-4 gap-1 mb-2">
-                {[{l:"P",v:54,c:TOKENS.protein},{l:"C",v:65,c:TOKENS.carbs},{l:"F",v:13,c:TOKENS.fats},{l:"kc",v:602,c:"#FFF"}].map(x=>(
+                {[{l:"P",v:54,c:TOKENS.protein},{l:"C",v:65,c:TOKENS.carbs},{l:"G",v:13,c:TOKENS.fats},{l:"kc",v:602,c:"#FFF"}].map(x=>(
                   <div key={x.l} className="text-center">
                     <Mono className="text-[7px] text-white/40">{x.l}</Mono>
                     <Mono className="block text-[10px] tabular-nums" style={{color:x.c}}>{x.v}</Mono>
@@ -1559,13 +1559,13 @@ export default function App() {
 
   const screens = [
     { k:"landing", l:"Landing", icon:Layers },
-    { k:"onboarding", l:"Onboarding", icon:User },
+    { k:"onboarding", l:"Registro", icon:User },
     { k:"dashboard", l:"Dashboard", icon:Activity },
-    { k:"auto", l:"Smart Auto", icon:Sparkles },
-    { k:"builder", l:"Build", icon:ChefHat },
-    { k:"pricing", l:"Pricing", icon:Cpu },
-    { k:"tracking", l:"Tracking", icon:Bike },
-    { k:"analytics", l:"Analytics", icon:BarChart3 },
+    { k:"auto", l:"Auto", icon:Sparkles },
+    { k:"builder", l:"Armar", icon:ChefHat },
+    { k:"pricing", l:"Precios", icon:Cpu },
+    { k:"tracking", l:"Pedido", icon:Bike },
+    { k:"analytics", l:"Analíticas", icon:BarChart3 },
   ];
 
   const renderScreen = () => {
